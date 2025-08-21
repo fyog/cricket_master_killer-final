@@ -281,7 +281,6 @@ function ScoringGrid({ playerNames, onRestart }) {
       <div>
         <h3>Non-Cricket numbers:</h3>
       </div>
-      {/* Singles */}
       <div className="dropdown-score-singles">
         <h>Singles:</h>
         <select
@@ -299,8 +298,6 @@ function ScoringGrid({ playerNames, onRestart }) {
           ))}
         </select>
       </div>
-
-      {/* Doubles */}
       <div className="dropdown-score-doubles">
         <h>Doubles: </h>
         <select onChange={(e) => {
@@ -315,8 +312,6 @@ function ScoringGrid({ playerNames, onRestart }) {
           ))}
         </select>
       </div>
-
-      {/* Triples */}
       <div className="dropdown-score-triples">
         <h>Triples: </h>
         <select onChange={(e) => {
