@@ -22,53 +22,8 @@
   text-align: center;         /* center text inside */
 }
 
-/* parent container to center the subheader horizontally */
-.subheader-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;           /* optional spacing from top */
-}
-
 .stats {
-    background: linear-gradient(145deg, #000000, #3d3d3d);
-
-  padding: 15px 20px;
-  border-radius: 10px;
-  color: white;
-}
-.App-link {
-  background-color:linear-gradient(145deg, #000000, #3d3d3d);
-  color: #ffffff;
-}
-
-.App-link:hover {
-  color:#39e687;
-}
-
-.dart-board {
-  height: 500px;
-  width: auto;
-  margin-bottom: 20px;
-  margin-top:140px;
-}
-
-button.App-link {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  cursor: pointer;
-}
-
-.player-scores {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-  gap: 20px;
-}
-
-.player-card {
- 
-
+  background: linear-gradient(145deg, #000000, #3d3d3d);
   padding: 15px 20px;
   border-radius: 10px;
   color: white;
@@ -76,14 +31,13 @@ button.App-link {
 
 .miss {
   background: linear-gradient(145deg, #050300, #3f3f3b);
-
 }
 .miss:hover{
   color:#3be40c;
 }
+
 .player-card ul {
   list-style: none;
-
   padding: 0;
   margin: 0;
 }
@@ -95,14 +49,8 @@ button.App-link {
   border: #f85656;
   margin: 10px;
   width: 250px;
-  
 }
-.text{
-  font-size:5px;
-  text-align: center;
 
-
-}
 .player-scores {
   display: flex;
   flex-wrap: wrap;
@@ -118,13 +66,6 @@ button.App-link {
   color: white;
 }
 
-.player-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* General button style */
 button, select {
   border: none;
   color: white;
@@ -136,6 +77,7 @@ button, select {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .button {
   background:linear-gradient(145deg, #000000, #3d3d3d);
   color: white;
@@ -147,7 +89,6 @@ button, select {
   cursor: pointer;
 }
 
-/* Hover state */
 .button:hover{
   color:#39e687;
 }
@@ -157,110 +98,73 @@ button, select {
  padding: 0;
  box-sizing: border-box;
 }
-/* Grid buttons */
-.grid-button {
-  border: none;
-  min-width: 60px;
-  min-height: 60px;
-  font-size: 18px;
-  font-weight: 700;
-  background: linear-gradient(145deg, #000000, #000000);
-}
 
-.grid-button:hover {
-  color:#3be40c
-}
-
-/* Multiplier buttons */
 .multiplier-buttons button {
   min-width: 80px;
   min-height: 40px;
   background: linear-gradient(145deg, #000000, #3d3d3d);
   border-radius: 10px;
- 
 }
+
 .multiplier-buttons button:hover{
   color:#3be40c;
 }
-/* Multiplier buttons1 */
+
 .multiplier-buttons1 button {
   min-width: 80px;
   min-height: 40px;
   background: linear-gradient(145deg, #154b06, #3be40c);
   border-radius: 10px;
- 
 }
 .multiplier-buttons1 button:hover{
   color:#000000;
 }
-/* Multiplier buttons2 */
+
 .multiplier-buttons2 button {
   min-width: 80px;
   min-height: 40px;
   background: linear-gradient(145deg, #4b1a06, hsl(0, 100%, 47%));
   border-radius: 10px;
- 
 }
 .multiplier-buttons2 button:hover{
   color:#000000;
 }
 
-/* Restart button */
 .restart-button {
-  background: linear-gradient(145deg, #1d014b, #6000f9
-  );
+  background: linear-gradient(145deg, #1d014b, #6000f9);
   color: linear-gradient(145deg, #000000, #000000);
   font-weight: 700;
   font-size: 18px;
 }
+
 .restart-button:hover {
   color: #000000;
 }
+
 .single-bull {
   background: linear-gradient(145deg, #7e8401, #ecf367);
-
 }
+
 .single-bull:hover{
   color: #000000;
 }
+
 .double-bull {
   background: linear-gradient(145deg, #836502, #c89a04);
-
 }
+
 .double-bull:hover{
   color: #000000;
 }
 
-/* game controls button */
 .undo-button {
   background: linear-gradient(145deg, #f143bd, #f59dcf);
   font-weight: 700;
   font-size: 18px;
 }
+
 .undo-button:hover {
   color: #000000;
-}
-
-
-
-/* Dropdown styling */
-
-.header-custom {
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  margin: 5px;
-
-}
-.dropdown-score select {
-  background: linear-gradient(145deg, #000000, #3d3d3d);
-  background-color: #000000;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.dropdown-score select:hover {
-  color:#39e687;
 }
 
 .dropdown-score-singles select {
@@ -286,6 +190,7 @@ button, select {
 .dropdown-score-doubles select:hover {
   color:#000000;
 }
+
 .dropdown-score-triples select {
   background: linear-gradient(145deg, #4b1a06, hsl(0, 100%, 47%));
   background-color: hsl(0, 100%, 47%);
