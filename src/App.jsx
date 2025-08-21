@@ -373,7 +373,7 @@ function ScoringGrid({ playerNames, onRestart }) {
         {players.map((player, idx) => (
           <div key={idx} className="player-card">
             <h3>{player.name}</h3>
-            <p><strong>Total Score:</strong> {player.totalScore}</p>
+            <p><strong>Score:</strong> {player.totalScore}</p>
             <ul>
               {scoringNumbers.map((num) => (
                 <li key={num}>{num}: {renderMarks(player.score[num])}</li>
