@@ -13,13 +13,13 @@
 }
 
 .subheader {
-  display: inline-block;      /* shrink to fit content */
+  display: inline-block;      
   padding: 10px 20px;
   font-size: calc(20px + 2vmin);
   color: linear-gradient(145deg, #000000, #3d3d3d);
-  background: #a4d6ff;        /* optional, for visibility */
-  border-radius: 8px;         /* optional rounded corners */
-  text-align: center;         /* center text inside */
+  background: #a4d6ff;        
+  border-radius: 8px;         
+  text-align: center;         
 }
 
 .stats {
