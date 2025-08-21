@@ -198,9 +198,14 @@ button, select {
   font-size: 16px;
   cursor: pointer;
 }
-
+.player-names {
+  padding:100px;
+}
 .dropdown-score-doubles select:hover {
   color:#000000;
+}
+.Dart-board {
+  padding: 100px;
 }
 
 .dropdown-score-triples select {

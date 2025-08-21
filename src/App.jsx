@@ -44,9 +44,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2> CRICKET MASTER KILLER </h2>
+        
         {step === 'intro' && (
           <>
+          <h2> CRICKET MASTER KILLER </h2>
             <img src={dart_board} className="Dart-board" alt='dart-board' />
             <div className="dropdown-score select">
               <label htmlFor="playerCount">Number of Players:</label>
@@ -69,7 +70,7 @@ function App() {
         )}
         {step === 'name-entry' && (
           <div className="dropdown-score select">
-            <h>Enter Player Names:</h>
+            <h2 className = "player-names">Enter Player Names:</h2>
             <div>
             </div>
             {[...Array(numPlayers)].map((_, i) => (
