@@ -279,7 +279,7 @@ function ScoringGrid({ playerNames, onRestart }) {
 
   //------------------------------------------------------------------------------------------------------------------
   return (
-    <div className='subheader containter'>
+    <div className='subheader container'>
       <div className=".subheader">
         <div className='stats'>
           <h3>Round: {round}, {currentPlayer?.name}, Throw {throwCount + 1} / 3</h3>
