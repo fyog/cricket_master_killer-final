@@ -18,7 +18,7 @@ function App() {
   */
   const handleStartSetup = () => {
     setPlayerNames(Array(numPlayers).fill('')); //initialize with empty strings
-    setStep('name-entry'); //change to name-entry step
+    setStep('name-entry');
   };
 
   /* 
@@ -37,7 +37,7 @@ function App() {
   const handleStartGame = () => {
     const filledNames = playerNames.map((n, i) => n.trim() || `Player ${i + 1}`); //loops through each name and its index (trim removes whitespace from the name string)
     setPlayerNames(filledNames);
-    setStep('game'); //change to game step
+    setStep('game');
   };
 
   //------------------------------------------------------------------------------------------------------------------
@@ -107,12 +107,8 @@ function App() {
 //------------------------------------------------------------------------------------------------------------------
 
 /*
-scoringGrid()
-react component that handles game logic
-state is fully private to the component that declares it
-use a state variable when a component needs to 'remember' some information betweeen renders
-state variables are declared by calling the useState Hook
-hooks are special functions that start with use, which let you “hook into” React features like state
+scoringGrid(playerNames, onRestart)
+react component that handles game/scoring logic
 */
 function ScoringGrid({ playerNames, onRestart }) {
 
@@ -128,7 +124,8 @@ function ScoringGrid({ playerNames, onRestart }) {
   const [modifier, setModifier] = useState(1);
   const [totalTurns, setTotalTurns] = useState(0);
   const renderMarks = (hits) => "✅".repeat(Math.min(hits, 3));
-  //creates a mapping such that 1:20 is mapped to 1:20, and Bull:25
+
+  //creates a mapping such that 1:20, Bull is mapped to 1:20, 25
   //ie. mapping = 1:1, 2:2, 3:3, 4:4, ..., 20:20, and Bull:25
   const valueMap = {
     Bull: 25,
@@ -155,14 +152,24 @@ function ScoringGrid({ playerNames, onRestart }) {
 
   );
 
+  /*
+  handles when score buttons are pressed
+  */
   const handleScoreClick = (scoreKey, mult = 1) => {
 
-    //save current state for undo
+    /*
+    setHistory(prev)
+    save current state
+    */
     setHistory(prev => [
       ...prev,
       { players: JSON.parse(JSON.stringify(players)), currentPlayerIndex, throwCount, multiplier: mult, modifier, round }
     ]);
 
+    /*
+    setPlayers(prevPlayers)
+    updates player scores
+    */
     setPlayers(prevPlayers => {
       const updatedPlayers = [...prevPlayers];
       const current = { ...updatedPlayers[currentPlayerIndex] };
@@ -217,7 +224,10 @@ function ScoringGrid({ playerNames, onRestart }) {
     //increment turn count in state
     setTotalTurns(prev => prev + 1);
 
-    //handle throw count & player switching
+    /*
+    setThrowCount(prevCount)
+    handle throw count & player switching
+    */
     setThrowCount(prevCount => {
       const newCount = prevCount + 1;
       if (newCount >= 3) {
@@ -227,7 +237,10 @@ function ScoringGrid({ playerNames, onRestart }) {
       return newCount;
     });
 
-    //update round
+    /*
+    setRound(prev)
+    increment the round whenever all players have made their throws
+    */
     setRound(prev => {
       if ((totalTurns + 1) % (3 * playerNames.length) === 0) {
         return prev + 1;
@@ -243,6 +256,10 @@ function ScoringGrid({ playerNames, onRestart }) {
     }
   };
 
+  /*
+  handleUndo()
+  undoes the last move by reverting to the previously saved state
+  */
   const handleUndo = () => {
     setHistory(prev => {
       if (prev.length === 0) return prev; //nothing to undo
