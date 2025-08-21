@@ -7,6 +7,12 @@
     },
     "android": {
       "package": "com.fyog.cricket_master_killer"
+    },
+    "ios": {
+      "bundleIdentifier": "com.fyog.cmk",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
