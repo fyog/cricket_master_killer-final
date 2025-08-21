@@ -50,7 +50,6 @@ function App() {
             <img src={dart_board} className="Dart-board" alt='dart-board' />
             <div className="dropdown-score select">
               <label htmlFor="playerCount">Number of Players:</label>
-
               <select
                 id="playerCount"
                 value={numPlayers}
@@ -68,12 +67,10 @@ function App() {
             </button>
           </>
         )}
-
         {step === 'name-entry' && (
           <div className="dropdown-score select">
             <h>Enter Player Names:</h>
             <div>
-
             </div>
             {[...Array(numPlayers)].map((_, i) => (
               <input
@@ -90,7 +87,6 @@ function App() {
             </button>
           </div>
         )}
-
         {step === 'game' && (
           <ScoringGrid
             playerNames={playerNames}
@@ -149,7 +145,6 @@ function ScoringGrid({ playerNames, onRestart }) {
     setCurrentPlayerIndex(0);
     setThrowCount(0);
   }, [playerNames] //dependency array is playerNames (throws a warning)
-
   );
 
   /*
@@ -273,9 +268,7 @@ function ScoringGrid({ playerNames, onRestart }) {
 
       return prev.slice(0, -1); //remove last history entry
     });
-
   };
-
 
   //------------------------------------------------------------------------------------------------------------------
   return (
